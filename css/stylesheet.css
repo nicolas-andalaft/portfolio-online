@@ -1,0 +1,183 @@
+/* Variables */
+:root {
+  --background-color: #15171f;
+  --secondary-background-color: #1c1d20;
+  --main-light: white;
+  --primary-color: #0ce49f;
+  --secondary-color: #f86374;
+  --faded-color: #262626;
+  --alt-text-color: #9b9b9b;
+  --text-font-family: "Inter", Arial, sans-serif;
+  --alt-text-font-family: "Share Tech Mono";
+}
+
+/* Tags */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--main-light);
+  font-family: var(--text-font-family);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  background-color: var(--secondary-background-color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+section {
+  padding: 50px 30px;
+  max-width: 2000px;
+  width: -moz-available;
+  width: available;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: var(--alt-text-font-family);
+  color: var(--alt-text-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 40px;
+}
+
+h2::before {
+  content: "<";
+}
+
+h2::after {
+  content: "/>";
+}
+
+/* Tag combinations */
+
+nav ul {
+  display: inline-flex;
+  padding: 15px;
+  margin: 0;
+}
+
+nav li {
+  list-style: none;
+  padding: 0 20px;
+  font-size: 1rem;
+}
+
+nav a {
+  color: var(--alt-text-color);
+  text-decoration: none;
+}
+
+/* Classes */
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.text {
+  text-align: justify;
+  text-indent: 30px;
+  font-size: 1.2rem;
+}
+
+.line-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.code-text {
+  color: var(--main-light);
+  font-family: var(--alt-text-font-family);
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.name-tag {
+  background-color: var(--main-light);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 40px 60px 40px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: min-content;
+}
+
+.profile-image {
+  background-color: var(--faded-color);
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  border-radius: 100%;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.profile-desc {
+  font-size: 1rem;
+  color: var(--faded-color);
+  text-align: center;
+}
+
+.profile-text {
+  max-width: 800px;
+  margin: 0 40px;
+}
+
+.skill-bar {
+  width: 500px;
+  font-family: var(--alt-text-font-family);
+  overflow: hidden;
+}
+
+.skill-dots {
+  width: 500px;
+  white-space: nowrap;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted white;
+}
+
+.contact-card {
+  padding: 10px 30px;
+  flex-basis: 40%;
+}
