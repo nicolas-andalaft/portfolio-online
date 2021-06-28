@@ -254,3 +254,11 @@ header {
   padding: 10px 30px;
   flex-basis: 40%;
 }
+
+.contact-card i,
+.contact-card > p:first-of-type {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  display: inline-block;
+  padding-right: 10px;
+}
