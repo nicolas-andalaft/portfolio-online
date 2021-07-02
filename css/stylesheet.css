@@ -256,9 +256,14 @@ header {
 }
 
 .contact-card i,
-.contact-card > p:first-of-type {
-  color: var(--primary-color);
+.contact-card p:first-of-type {
+  color: var(--secondary-color);
   font-size: 1.5rem;
   display: inline-block;
   padding-right: 10px;
+}
+
+#contato .contact-card:nth-child(-n+2) i,
+#contato .contact-card:nth-child(-n+2) p:first-of-type {
+  color:var(--primary-color);
 }
