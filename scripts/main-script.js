@@ -11,10 +11,10 @@ function onLoad() {
 }
 
 function setSkillBar(element) {
-  const total = 45;
+  const total = 50;
   let value = element.getAttribute("value");
   value = parseInt(value * total);
-  element.innerHTML = "[" + "█".repeat(value) + "/".repeat(total - value) + "]";
+  element.innerHTML = "[" + "#".repeat(value) + ".".repeat(total - value) + "]";
 }
 
 function setSkillDots(element) {
