@@ -90,6 +90,9 @@ function changeNavbarOnScroll() {
 }
 
 function changeTheme() {
+	const selector = document.getElementsByClassName("selector")[0];
+	selector.classList.toggle("selector-active");
+
 	const currentTheme = document.documentElement.getAttribute("data-theme");
 	if (currentTheme === "light")
 		document.documentElement.setAttribute("data-theme", "dark");
