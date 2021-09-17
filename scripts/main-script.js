@@ -1,32 +1,33 @@
 function onLoad() {
-	Array.prototype.map.call(
-		document.getElementsByClassName("icon"),
-		function (element) {
-			element.style["mask-image"] = `url(${element.getAttribute("url")})`;
-			element.style["-webkit-mask-image"] = `url(${element.getAttribute(
-				"url"
-			)})`;
-		}
+	// Get css colors
+	const styles = getComputedStyle(document.documentElement);
+
+	const primaryColor = styles.getPropertyValue("--primary-color");
+	const accentColor = styles.getPropertyValue("--accent-color");
+
+	// Set hard skill progress
+	[...document.getElementsByClassName("skill-progress")].forEach(
+		setSkillProgress
 	);
 
-	const primaryColor = getComputedStyle(
-		document.documentElement
-	).getPropertyValue("--primary-color");
-	const accentColor = getComputedStyle(
-		document.documentElement
-	).getPropertyValue("--accent-color");
+	// Set hard skill icons
+	[...document.getElementsByClassName("svg-icon")].forEach(setSkillIcons);
 
-	const softSkillIcon = document.getElementsByClassName("soft-skill-icon");
-	for (element of softSkillIcon) {
+	// Set soft skill icons
+	[...document.getElementsByClassName("soft-skill-icon")].forEach((element) => {
 		setLordIconProps(element, primaryColor, accentColor);
-	}
+	});
 
-	const skillBars = document.getElementsByClassName("skill-progress");
-	for (element of skillBars) {
-		setSkillProgress(element);
-	}
+	// Configure gliders
+	[...document.getElementsByClassName("glider-wrapper")].forEach(setGlider);
 
+	// Dynamically change navbar color
 	changeNavbarOnScroll();
+}
+
+function setSkillIcons(element) {
+	element.style["mask-image"] = `url(${element.getAttribute("url")})`;
+	element.style["-webkit-mask-image"] = `url(${element.getAttribute("url")})`;
 }
 
 function setLordIconProps(element, col1, col2) {
@@ -58,9 +59,6 @@ function changeNavbarOnScroll() {
 		document.getElementById("nav-bg-1"),
 		document.getElementById("nav-bg-2"),
 	];
-
-	// Nav parent
-	const nav = document.getElementsByTagName("nav")[0];
 
 	// Y values
 	const scrollPoints = Array.prototype.map.call(
@@ -97,4 +95,22 @@ function changeTheme() {
 	if (currentTheme === "light")
 		document.documentElement.setAttribute("data-theme", "dark");
 	else document.documentElement.setAttribute("data-theme", "light");
+}
+
+function setGlider(element) {
+	element.innerHTML +=
+		"<button class='glider-l-arrow'><</button>" +
+		"<button class='glider-r-arrow'>></button >";
+
+	var glider = element.querySelector(".glider");
+	new Glider(glider, {
+		draggable: true,
+		scrollLock: true,
+		rewind: true,
+
+		arrows: {
+			prev: element.querySelector(".glider-l-arrow"),
+			next: element.querySelector(".glider-r-arrow"),
+		},
+	});
 }

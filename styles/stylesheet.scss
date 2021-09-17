@@ -1,4 +1,5 @@
-// Variables
+/* #region Variables */
+
 :root {
 	--text-font-family: "Inter";
 	--alt-text-font-family: "Share Tech Mono";
@@ -36,7 +37,9 @@ html[data-theme="dark"] {
 	--accent-color: #519bd8;
 }
 
-/* Default Tags */
+/* #endregion */
+
+/* #region Default Tags */
 
 html {
 	scroll-behavior: smooth;
@@ -121,12 +124,13 @@ code::before {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-// Classes
+/* #endregion */
+
+/* #region Classes */
 
 .small-card {
 	border-radius: 30px;
 	transition: 0.5s;
-	-moz-transition: 0.5s;
 	position: relative;
 	padding: 30px 40px;
 	margin: 20px;
@@ -153,7 +157,64 @@ code::before {
 	left: 50%;
 }
 
-// Nav List
+.glider-wrapper {
+	position: relative;
+	background-color: #00000017;
+	aspect-ratio: 16/9;
+}
+
+.glider-slide {
+	display: flex;
+
+	img {
+		object-fit: contain;
+		height: 100%;
+	}
+}
+
+.draggable {
+	overflow: hidden;
+	height: 100%;
+}
+
+.glider-track {
+	height: 100%;
+}
+
+.glider-l-arrow,
+.glider-r-arrow {
+	position: absolute;
+	background-color: var(--faded-fg-color);
+	color: var(--bg-color);
+	padding: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-style: hidden;
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	margin: 2px;
+
+	&:hover {
+		background-color: var(--alt-fg-color);
+	}
+
+	&:active {
+		background-color: var(--fg-color);
+	}
+}
+
+.glider-l-arrow {
+	left: 0;
+}
+
+.glider-r-arrow {
+	right: 0;
+}
+
+/* #endregion */
+
+/* #region Navbar */
 
 nav {
 	width: 100%;
@@ -211,7 +272,9 @@ nav {
 	background-color: var(--bg-color);
 }
 
-// Header items
+/* #endregion */
+
+/* #region Header */
 
 header {
 	padding-top: var(--nav-height);
@@ -271,7 +334,9 @@ header {
 	}
 }
 
-// Bio
+/* #endregion */
+
+/* #region Bio */
 
 .bio-wrapper {
 	display: grid;
@@ -324,7 +389,9 @@ header {
 	justify-content: center;
 }
 
-// Skills
+/* #endregion */
+
+/* #region Skills */
 
 .skills-wrapper {
 	width: 100%;
@@ -365,7 +432,7 @@ header {
 	align-items: center;
 	position: relative;
 
-	.icon {
+	.svg-icon {
 		position: absolute;
 		height: 40px;
 		width: 40px;
@@ -391,7 +458,9 @@ header {
 	font-size: 1.2rem;
 }
 
-// Card de Projeto
+/* #endregion */
+
+/* #region Projetos */
 
 .project-wrapper {
 	display: grid;
@@ -401,9 +470,12 @@ header {
 
 .project-card {
 	background-color: var(--card-bg-color);
+	border-radius: 10px;
 	overflow: hidden;
 	padding-bottom: 50px;
 	box-shadow: var(--default-shadow);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 
 	p {
 		margin: 0 40px 30px 40px;
@@ -415,44 +487,16 @@ header {
 	p:first-of-type {
 		margin-top: 40px;
 	}
-}
 
-.project-header {
-	position: relative;
-	height: 300px;
-	display: flex;
-	overflow: scroll;
-
-	img {
+	.carousel {
 		height: 100%;
-		object-fit: cover;
-	}
-
-	p {
-		color: var(--primary-color);
-		text-shadow: var(--default-shadow);
-		margin: 0;
-		position: absolute;
-		bottom: 20px;
-		left: 10px;
-		font-weight: 800;
-		font-size: 2.5rem;
-		z-index: 1;
-		transition: font-size 0.5s;
+		max-height: 400px;
 	}
 }
 
-.project-header:after {
-	content: "";
-	background-image: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6));
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
+/* #endregion */
 
-// Card de Contato
+/* #region Contato */
 
 .contact-wrapper {
 	display: grid;
@@ -478,7 +522,9 @@ header {
 	margin-bottom: 10px;
 }
 
-// Footer items
+/* #endregion */
+
+/* #region Footer */
 
 footer {
 	background-color: var(--primary-color);
@@ -503,3 +549,5 @@ footer {
 		align-self: center;
 	}
 }
+
+/* #endregion */
