@@ -1,0 +1,64 @@
+.skills-wrapper {
+	width: 100%;
+	padding-top: 40px;
+	padding-bottom: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	svg {
+		width: 140px;
+		height: 140px;
+		transform-origin: center;
+		transform: rotate(-90deg);
+	}
+}
+
+.circle-progress {
+	transform: scale(1.4);
+	fill: none;
+	stroke: var(--primary-color);
+	stroke-width: 8;
+	stroke-linecap: round;
+	animation: progress-anim 2s ease-in-out forwards;
+}
+
+@keyframes progress-anim {
+	from {
+		stroke-dashoffset: -251;
+	}
+}
+
+.skill-progress {
+	display: flex;
+	margin: 30px 10px;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	.svg-icon {
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		background-color: var(--accent-color);
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+	}
+}
+
+.soft-skill-icon {
+	height: 80px;
+	width: 80px;
+	padding: 10px;
+}
+
+.soft-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+	font-size: 1.2rem;
+}

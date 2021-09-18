@@ -1,0 +1,57 @@
+header {
+	padding-top: var(--nav-height);
+	background-image: var(--gradient-bg);
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 0;
+	position: relative;
+	overflow-x: hidden;
+
+	h1 {
+		color: var(--fg-color);
+		font-size: 3.5rem;
+		font-weight: bolder;
+	}
+
+	p {
+		color: var(--alt-fg-color);
+		font-size: 1.8rem;
+	}
+
+	img {
+		position: absolute;
+		bottom: 0;
+		object-fit: contain;
+		height: 60%;
+		z-index: -10;
+		opacity: 30%;
+		filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+	}
+}
+
+#data-theme-controls {
+	background-color: var(--faded-alt-fg-color);
+	width: min-content;
+	margin-left: auto;
+	margin-right: 10px;
+	border-radius: 50px;
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+	position: relative;
+
+	i {
+		font-size: 1.3rem;
+		margin: 8px;
+		z-index: 10;
+		color: var(--fg-color);
+
+		&:first-of-type {
+			margin-right: 25px;
+		}
+	}
+}
