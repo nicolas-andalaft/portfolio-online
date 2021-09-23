@@ -1,11 +1,12 @@
-@import "./core/variables.scss";
-@import "./core/tags.scss";
+@import "./core/_variables.scss";
+@import "./core/_tags.scss";
 
-@import "./components/elements.scss";
-@import "./components/navbar.scss";
+@import "./components/_elements.scss";
+@import "./components/_navbar.scss";
 
-@import "./sections/header.scss";
-@import "./sections/bio.scss";
-@import "./sections/skills.scss";
-@import "./sections/projetos.scss";
-@import "./sections/footer.scss";
+@import "./sections/_header.scss";
+@import "./sections/_bio.scss";
+@import "./sections/_skills.scss";
+@import "./sections/_projetos.scss";
+@import "./sections/_contato.scss";
+@import "./sections/_footer.scss";

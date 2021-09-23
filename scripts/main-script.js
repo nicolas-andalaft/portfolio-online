@@ -5,6 +5,9 @@ function onLoad() {
 	const primaryColor = styles.getPropertyValue("--primary-color");
 	const accentColor = styles.getPropertyValue("--accent-color");
 
+	// Get data theme icon
+	const dataThemeMainIcon = document.getElementById("data-theme-main-icon");
+
 	// Set hard skill progress
 	[...document.getElementsByClassName("skill-progress")].forEach(
 		setSkillProgress
@@ -23,6 +26,22 @@ function onLoad() {
 
 	// Dynamically change navbar color
 	changeNavbarOnScroll();
+
+	// Activate paralax effect
+	var rellax = new Rellax(".rellax");
+
+	// Theme changing function
+	document
+		.getElementById("data-theme-controls")
+		.addEventListener("click", () => {
+			const currentTheme = document.documentElement.getAttribute("data-theme");
+
+			if (currentTheme === "light")
+				document.documentElement.setAttribute("data-theme", "dark");
+			else document.documentElement.setAttribute("data-theme", "light");
+
+			dataThemeMainIcon.classList.toggle("hidden");
+		});
 }
 
 function setSkillIcons(element) {
@@ -54,47 +73,17 @@ function setSkillProgress(element) {
 
 function changeNavbarOnScroll() {
 	// Backgrounds
-	const nav_bg = [
-		document.getElementById("nav-bg-0"),
-		document.getElementById("nav-bg-1"),
-		document.getElementById("nav-bg-2"),
-	];
+	const nav_color = document.getElementById("nav-bg-0");
 
 	// Y values
-	const scrollPoints = Array.prototype.map.call(
-		document.getElementsByClassName("section"),
-		function (section) {
-			return section.offsetTop + section.offsetHeight;
-		}
+	const header = document.getElementsByTagName("header")[0];
+	const header_height = header.offsetTop + header.offsetHeight;
+
+	window.addEventListener(
+		"scroll",
+		() =>
+			(nav_color.style.opacity = this.window.scrollY > header_height ? 0 : 1)
 	);
-
-	var currentIndex;
-	var currentSection;
-
-	window.addEventListener("scroll", function () {
-		for (i = 0; i < scrollPoints.length; i++) {
-			if (this.window.scrollY < scrollPoints[i]) {
-				currentSection = i;
-				break;
-			}
-		}
-
-		currentIndex = currentSection === 0 ? 0 : (currentSection % 2) + 1;
-
-		for (i = 0; i < nav_bg.length; i++) {
-			nav_bg[i].style.opacity = i == currentIndex ? 1 : 0;
-		}
-	});
-}
-
-function changeTheme() {
-	const selector = document.getElementsByClassName("selector")[0];
-	selector.classList.toggle("selector-active");
-
-	const currentTheme = document.documentElement.getAttribute("data-theme");
-	if (currentTheme === "light")
-		document.documentElement.setAttribute("data-theme", "dark");
-	else document.documentElement.setAttribute("data-theme", "light");
 }
 
 function setGlider(element) {

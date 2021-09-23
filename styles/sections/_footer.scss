@@ -1,0 +1,11 @@
+footer {
+	background-color: var(--primary-color);
+	align-items: center;
+
+	p {
+		cursor: pointer;
+		font-size: 3rem;
+		font-family: var(--alt-text-font-family);
+		text-align: center;
+	}
+}

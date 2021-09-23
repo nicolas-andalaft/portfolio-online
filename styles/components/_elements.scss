@@ -1,3 +1,35 @@
+#background {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: -50;
+
+	stroke: var(--light-contrast-color);
+	stroke-linecap: round;
+
+	svg {
+		height: 100%;
+		width: 100%;
+	}
+
+	.st0 {
+		stroke-width: 0.5px;
+	}
+
+	.st1 {
+		stroke-width: 1px;
+	}
+}
+
+.text {
+	text-align: justify;
+	text-indent: 30px;
+}
+
+.hidden {
+	display: none !important;
+}
+
 .small-card {
 	border-radius: 30px;
 	transition: 0.5s;
@@ -12,24 +44,9 @@
 	}
 }
 
-.selector {
-	background-color: var(--faded-alt-fg-color);
-	height: 100%;
-	padding-right: 50%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-radius: 100%;
-	transition: left 0.25s ease-out;
-}
-
-.selector-active {
-	left: 50%;
-}
-
 .glider-wrapper {
 	position: relative;
-	background-color: #00000017;
+	background-color: var(--faded-alt-fg-color);
 	aspect-ratio: 16/9;
 }
 

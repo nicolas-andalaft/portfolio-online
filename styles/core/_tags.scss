@@ -1,57 +1,53 @@
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
-	margin: 0;
 	background-color: var(--bg-color);
 	color: var(--fg-color);
 	font-family: var(--text-font-family);
 	font-weight: 500;
+	margin: 0;
+}
+
+header,
+section,
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
 }
 
 section {
-	padding: 50px 10%;
-	min-height: 100vh;
-	width: 100%;
-	z-index: -10;
-	box-sizing: border-box;
-	display: grid;
-	grid-template-columns: minmax(0, 1500px);
-	justify-content: center;
-	justify-items: center;
-	background-color: var(--bg-color);
+	padding: 100px 5%;
+}
 
-	&:nth-child(even) {
-		background-color: var(--alt-bg-color);
-	}
-
-	&:last-of-type {
-		padding-bottom: 200px;
-	}
+section:last-of-type {
+	padding-bottom: 200px;
 }
 
 h1 {
-	text-align: center;
 	text-transform: uppercase;
-	font-weight: bolder;
+	font-weight: 900;
 	font-size: 2.2rem;
 	margin: 0;
 }
 
-h2 {
-	align-self: flex-start;
-	margin-left: 40px;
+p {
+	margin: 0 0 15px 0;
 }
 
 code {
-	text-align: center;
 	font-family: var(--alt-text-font-family);
 	color: var(--faded-fg-color);
 	font-size: 1rem;
 	font-weight: bold;
 	font-style: italic;
-	margin: 1rem;
+	margin-bottom: 50px;
 
 	&::before {
 		content: "_:";
