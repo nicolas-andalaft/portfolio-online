@@ -24,8 +24,7 @@ function onLoad() {
 	// Configure gliders
 	[...document.getElementsByClassName("glider-wrapper")].forEach(setGlider);
 
-	// Dynamically change navbar color
-	changeNavbarOnScroll();
+	onScrollEvents();
 
 	// Activate paralax effect
 	var rellax = new Rellax(".rellax");
@@ -71,21 +70,6 @@ function setSkillProgress(element) {
     </svg>`;
 }
 
-function changeNavbarOnScroll() {
-	// Backgrounds
-	const nav_color = document.getElementById("nav-bg-0");
-
-	// Y values
-	const header = document.getElementsByTagName("header")[0];
-	const header_height = header.offsetTop + header.offsetHeight;
-
-	window.addEventListener(
-		"scroll",
-		() =>
-			(nav_color.style.opacity = this.window.scrollY > header_height ? 0 : 1)
-	);
-}
-
 function setGlider(element) {
 	element.innerHTML +=
 		"<button class='glider-l-arrow'><</button>" +
@@ -101,5 +85,51 @@ function setGlider(element) {
 			prev: element.querySelector(".glider-l-arrow"),
 			next: element.querySelector(".glider-r-arrow"),
 		},
+	});
+}
+
+function onScrollEvents() {
+	// Scroll elements variables
+	const navBg = document.getElementById("nav-bg");
+
+	const header = document.getElementsByTagName("header")[0];
+	const headerHeight = header.offsetTop + header.offsetHeight;
+
+	const scrollElements = document.getElementsByClassName("anim-on-scroll");
+
+	// Check element height function
+	const isElementInView = (el) => {
+		const elementTop = el.getBoundingClientRect().top;
+
+		return (
+			elementTop <=
+			(window.innerHeight || document.documentElement.clientHeight) -
+				el.offsetHeight / 2
+		);
+	};
+
+	const handleNavbarScroll = () => {
+		console.log(headerHeight);
+		if (window.scrollY > headerHeight) {
+			navBg.classList.add("animate");
+		} else {
+			navBg.classList.remove("animate");
+		}
+	};
+
+	// Check all elements height
+	const handleScrollElements = () => {
+		[...scrollElements].forEach((el) => {
+			if (isElementInView(el)) {
+				el.classList.add("animate");
+			} else {
+				el.classList.remove("animate");
+			}
+		});
+	};
+
+	window.addEventListener("scroll", () => {
+		handleNavbarScroll();
+		handleScrollElements();
 	});
 }

@@ -44,10 +44,10 @@ nav {
 	}
 }
 
-#nav-bg-0 {
+#nav-bg {
 	background-image: var(--gradient-bg);
-}
 
-#nav-bg-1 {
-	background-color: var(--bg-color);
+	&.animate {
+		opacity: 0;
+	}
 }
