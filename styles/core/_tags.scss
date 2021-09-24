@@ -1,0 +1,78 @@
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	font-family: var(--text-font-family);
+	font-weight: 500;
+	margin: 0;
+}
+
+header,
+section,
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+section {
+	padding: 100px 5%;
+}
+
+section:last-of-type {
+	padding-bottom: 200px;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 2.2rem;
+	margin: 0;
+}
+
+p {
+	margin: 0 0 15px 0;
+}
+
+code {
+	font-family: var(--alt-text-font-family);
+	color: var(--faded-fg-color);
+	font-size: 1rem;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 50px;
+
+	&::before {
+		content: "_:";
+	}
+}
+
+*[onclick] {
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	position: fixed;
+	right: 0;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}

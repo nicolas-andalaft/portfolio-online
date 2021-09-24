@@ -1,0 +1,44 @@
+:root {
+	--text-font-family: "Inter";
+	--alt-text-font-family: "Share Tech Mono";
+	--txt-size-page-title: 3.7rem;
+	--txt-size-page-subtitle: 1.1rem;
+	--txt-size-h1: 1.6rem;
+	--txt-size-h2: 1.4rem;
+	--txt-size-h3: 1.3rem;
+	--txt-size-normal: 1.2rem;
+	--nav-height: 3.2rem;
+	--default-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+	--gradient-bg: linear-gradient(
+		90deg,
+		var(--primary-color),
+		var(--accent-color)
+	);
+}
+
+html {
+	&,
+	&[data-theme="light"] {
+		--bg-color: #e4e4e4;
+		--card-bg-color: #f5f5f5;
+		--fg-color: #1a1a1a;
+		--alt-fg-color: #202020a6;
+		--faded-fg-color: #2020206e;
+		--faded-alt-fg-color: #0000001f;
+		--light-contrast-color: #00000005;
+		--primary-color: #0ce49f;
+		--accent-color: #70bfff;
+	}
+
+	&[data-theme="dark"] {
+		--bg-color: #20222b;
+		--card-bg-color: #181818;
+		--fg-color: #ebebeb;
+		--alt-fg-color: #ebebebbd;
+		--faded-fg-color: #ebebeb79;
+		--faded-alt-fg-color: #00000028;
+		--light-contrast-color: #ffffff02;
+		--primary-color: #0eb17d;
+		--accent-color: #519bd8;
+	}
+}
