@@ -1,0 +1,45 @@
+.bio-wrapper {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.bio-img {
+	width: 250px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 40px;
+	margin-top: 0;
+
+	img {
+		width: 100%;
+		transform: translateY(12%);
+		clip-path: url(#bio-img-blob);
+	}
+
+	svg {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	path {
+		fill: var(--primary-color);
+	}
+
+	clipPath {
+		transform: translate(-47%, -143%) scale(137%);
+	}
+}
+
+.bio-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 1000px;
+	flex: 2 1 650px;
+}
