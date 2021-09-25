@@ -53,23 +53,19 @@ body {
   margin: 0;
 }
 
-header,
-section,
-footer {
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  max-width: 1800px;
   min-height: 100vh;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 section {
   padding: 100px 5%;
-}
-
-section:last-of-type {
-  padding-bottom: 200px;
 }
 
 h1 {
@@ -80,6 +76,7 @@ h1 {
 }
 
 p {
+  text-align: justify;
   margin: 0 0 15px 0;
 }
 
@@ -141,13 +138,15 @@ code::before {
   stroke-width: 1px;
 }
 
-.text {
-  text-align: justify;
-  text-indent: 30px;
-}
-
 .hidden {
   display: none !important;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .small-card {
@@ -223,6 +222,10 @@ code::before {
 .glider-slide img {
   object-fit: contain;
   height: 100%;
+}
+
+.glider {
+  display: flex;
 }
 
 .draggable {
@@ -322,11 +325,14 @@ nav div {
 }
 
 header {
-  justify-content: start;
+  background-image: var(--gradient-bg);
   overflow: hidden;
+}
+
+header > section {
+  justify-content: start;
   position: relative;
   padding: 100px 8%;
-  background-image: var(--gradient-bg);
 }
 
 header h1 {
@@ -386,7 +392,7 @@ header img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .bio-img {
@@ -471,7 +477,7 @@ header img {
   position: absolute;
   height: 40px;
   width: 40px;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -481,15 +487,6 @@ header img {
   height: 80px;
   width: 80px;
   padding: 10px;
-}
-
-.soft-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  font-size: 1.2rem;
 }
 
 .project-wrapper {
@@ -543,7 +540,7 @@ header img {
 }
 
 footer {
-  align-items: center;
+  margin-top: 200px;
   transition: background-color 5s;
 }
 
