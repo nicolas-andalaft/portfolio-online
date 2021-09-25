@@ -40,7 +40,7 @@
 		position: absolute;
 		height: 40px;
 		width: 40px;
-		background-color: var(--accent-color);
+		background-color: var(--primary-color);
 		mask-size: contain;
 		mask-repeat: no-repeat;
 		mask-position: center;
@@ -51,13 +51,4 @@
 	height: 80px;
 	width: 80px;
 	padding: 10px;
-}
-
-.soft-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 30px;
-	font-size: 1.2rem;
 }

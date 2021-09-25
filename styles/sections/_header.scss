@@ -1,9 +1,12 @@
 header {
-	justify-content: start;
-	overflow: hidden;
-	position: relative;
-	padding: 100px 8%;
 	background-image: var(--gradient-bg);
+	overflow: hidden;
+
+	> section {
+		justify-content: start;
+		position: relative;
+		padding: 100px 8%;
+	}
 
 	h1 {
 		font-size: var(--txt-size-page-title);
