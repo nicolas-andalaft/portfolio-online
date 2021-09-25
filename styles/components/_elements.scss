@@ -21,13 +21,15 @@
 	}
 }
 
-.text {
-	text-align: justify;
-	text-indent: 30px;
-}
-
 .hidden {
 	display: none !important;
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .small-card {
@@ -103,6 +105,10 @@
 		object-fit: contain;
 		height: 100%;
 	}
+}
+
+.glider {
+	display: flex;
 }
 
 .draggable {

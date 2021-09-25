@@ -11,23 +11,19 @@ body {
 	margin: 0;
 }
 
-header,
-section,
-footer {
+section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
+	max-width: 1800px;
 	min-height: 100vh;
 	box-sizing: border-box;
+	margin: 0 auto;
 }
 
 section {
 	padding: 100px 5%;
-}
-
-section:last-of-type {
-	padding-bottom: 200px;
 }
 
 h1 {
@@ -38,6 +34,7 @@ h1 {
 }
 
 p {
+	text-align: justify;
 	margin: 0 0 15px 0;
 }
 

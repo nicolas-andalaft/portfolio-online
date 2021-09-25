@@ -18,7 +18,7 @@ function onLoad() {
 
 	// Set soft skill icons
 	[...document.getElementsByClassName("soft-skill-icon")].forEach((element) => {
-		setLordIconProps(element, primaryColor, accentColor);
+		setLordIconProps(element, accentColor);
 	});
 
 	// Configure gliders
@@ -27,7 +27,7 @@ function onLoad() {
 	onScrollEvents();
 
 	// Activate paralax effect
-	var rellax = new Rellax(".rellax");
+	new Rellax(".rellax");
 
 	// Theme changing function
 	document
@@ -48,13 +48,12 @@ function setSkillIcons(element) {
 	element.style["-webkit-mask-image"] = `url(${element.getAttribute("url")})`;
 }
 
-function setLordIconProps(element, col1, col2) {
-	col1.trim();
-	col2.trim();
+function setLordIconProps(element, color) {
+	color.trim();
 
 	element.setAttribute("trigger", "loop");
 	element.setAttribute("delay", "3000");
-	element.setAttribute("colors", "primary:" + col1 + ",secondary:" + col2);
+	element.setAttribute("colors", "primary:" + color + ",secondary:" + color);
 }
 
 function setSkillProgress(element) {
@@ -72,8 +71,8 @@ function setSkillProgress(element) {
 
 function setGlider(element) {
 	element.innerHTML +=
-		"<button class='glider-l-arrow'><</button>" +
-		"<button class='glider-r-arrow'>></button >";
+		"<button class='glider-l-arrow'><i class='fas fa-chevron-left'></i></button>" +
+		"<button class='glider-r-arrow'><i class='fas fa-chevron-right'></i></button>";
 
 	var glider = element.querySelector(".glider");
 	new Glider(glider, {
